@@ -5,18 +5,21 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --primary:     #4F7A26;   /* Olive green */
-  --primary-dark:#3A5B1C;
+  --primary:     #116530;   /* Deep green */
+  --primary-dark:#0D4A22;
+  --secondary:   #21B6A8;   /* Teal */
   --accent:      #D9B24C;   /* Gold */
   --accent-dark: #B8922C;
-  --light:       #F7F4EC;
+  --accent-2:    #18A558;   /* Mid green */
+  --accent-3:    #A3EBB1;   /* Light green */
+  --light:       #F4F9F5;
   --white:       #FFFFFF;
-  --text:        #4E5557;
-  --text-light:  #6B7280;
+  --text:        #676969;
+  --text-light:  #888A8A;
   --border:      #E5E7EB;
-  --success:     #16A34A;
+  --success:     #18A558;
   --radius:      8px;
-  --shadow:      0 4px 24px rgba(79,122,38,0.10);
+  --shadow:      0 4px 24px rgba(17,101,48,0.12);
   --transition:  0.3s ease;
   --font-main:   'Segoe UI', Arial, sans-serif;
   --font-heading:'Georgia', 'Times New Roman', serif;
@@ -114,7 +117,7 @@ section { padding: 80px 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(58, 91, 28, 0.97);
+  background: rgba(13, 74, 34, 0.97);
   backdrop-filter: blur(10px);
   padding: 0;
   transition: box-shadow var(--transition);
@@ -197,7 +200,7 @@ section { padding: 80px 0; }
 /* ---- HERO ---- */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #6B9A3A 100%);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1a8040 100%);
   display: flex;
   align-items: center;
   position: relative;
@@ -287,7 +290,7 @@ section { padding: 80px 0; }
   align-items: center;
   gap: 6px;
   padding: 0.4rem 1rem;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -374,14 +377,14 @@ section { padding: 80px 0; }
 .service-icon {
   width: 56px; height: 56px;
   border-radius: 14px;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.6rem;
   margin-bottom: 1.25rem;
   transition: background var(--transition);
 }
 .service-card:hover .service-icon {
-  background: rgba(79,122,38,0.14);
+  background: rgba(17,101,48,0.14);
 }
 .service-card h3 { margin-bottom: 0.6rem; font-size: 1.15rem; }
 .service-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0; }
@@ -478,7 +481,7 @@ section { padding: 80px 0; }
   flex-wrap: wrap;
 }
 .cta-text h2 { color: var(--primary-dark); margin-bottom: 0.5rem; }
-.cta-text p  { color: rgba(58,91,28,0.75); margin-bottom: 0; }
+.cta-text p  { color: rgba(13,74,34,0.75); margin-bottom: 0; }
 .newsletter-form {
   display: flex;
   gap: 0.75rem;
@@ -533,7 +536,7 @@ section { padding: 80px 0; }
 }
 .contact-icon {
   width: 44px; height: 44px;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
@@ -572,7 +575,7 @@ section { padding: 80px 0; }
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,122,38,0.08); }
+.form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(17,101,48,0.08); }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-submit { width: 100%; padding: 0.9rem; font-size: 1rem; }
 .form-success {
@@ -693,7 +696,7 @@ section { padding: 80px 0; }
 }
 .mv-card-icon {
   width: 52px; height: 52px;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem;
@@ -764,7 +767,7 @@ section { padding: 80px 0; }
 .event-tag {
   display: inline-block;
   padding: 0.3rem 0.75rem;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   color: var(--primary);
   font-size: 0.78rem;
   font-weight: 600;
@@ -803,7 +806,7 @@ section { padding: 80px 0; }
 .faq-arrow {
   flex-shrink: 0;
   width: 24px; height: 24px;
-  background: rgba(79,122,38,0.08);
+  background: rgba(17,101,48,0.08);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.75rem;
