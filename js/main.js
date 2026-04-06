@@ -108,6 +108,22 @@
     });
   }
 
+  /* ---- View All / View Less services toggle ---- */
+  const viewAllBtn = document.getElementById('viewAllServicesBtn');
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const extraCards = document.querySelectorAll('.service-card--extra');
+      const isExpanded = viewAllBtn.getAttribute('aria-expanded') === 'true';
+      extraCards.forEach(card => {
+        card.style.display = isExpanded ? 'none' : '';
+      });
+      viewAllBtn.textContent = isExpanded ? 'View All Solutions' : 'View Less';
+      viewAllBtn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+    });
+    viewAllBtn.setAttribute('aria-expanded', 'false');
+  }
+
   /* ---- Smooth scroll for anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
