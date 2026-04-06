@@ -10,14 +10,14 @@
   --secondary:   #21B6A8;   /* Teal */
   --accent:      #D9B24C;   /* Gold */
   --accent-dark: #B8922C;
-  --accent-2:    #18A558;   /* Mid green */
+  --accent-2:    #A3EBB1;   /* Mid green */
   --accent-3:    #A3EBB1;   /* Light green */
   --light:       #F4F9F5;
   --white:       #FFFFFF;
   --text:        #676969;
   --text-light:  #888A8A;
   --border:      #E5E7EB;
-  --success:     #18A558;
+  --success:     #A3EBB1;
   --radius:      8px;
   --shadow:      0 4px 24px rgba(17,101,48,0.12);
   --transition:  0.3s ease;
