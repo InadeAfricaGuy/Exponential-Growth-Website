@@ -521,6 +521,67 @@ section { padding: 80px 0; }
 }
 
 /* ---- CONTACT SECTION ---- */
+/* ---- Booking Steps ---- */
+.booking-steps { background: var(--light); padding: 80px 0; }
+.booking-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+}
+.booking-steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 2.25rem;
+  left: calc(12.5% + 0.75rem);
+  right: calc(12.5% + 0.75rem);
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.booking-step {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.booking-step:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.booking-step-num {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+.booking-step h4 {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+.booking-step p { font-size: 0.875rem; color: var(--text-light); line-height: 1.6; margin: 0; }
+@media (max-width: 900px) {
+  .booking-steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .booking-steps-grid::before { display: none; }
+}
+@media (max-width: 520px) {
+  .booking-steps-grid { grid-template-columns: 1fr; }
+}
+
 .contact-section { background: var(--white); }
 .contact-grid {
   display: grid;
