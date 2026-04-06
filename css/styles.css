@@ -520,7 +520,198 @@ section { padding: 80px 0; }
   font-weight: 600;
 }
 
+/* ---- BOOK A CALL PAGE ---- */
+.bac-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+.bac-left {
+  background: #5E7E8A;
+  padding: 80px 64px;
+  display: flex;
+  align-items: center;
+}
+.bac-left-inner { max-width: 520px; }
+.bac-heading {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+.bac-intro {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+.bac-steps { display: flex; flex-direction: column; gap: 1.75rem; }
+.bac-step { }
+.bac-step-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+.bac-chevron {
+  color: var(--accent);
+  margin-right: 0.25rem;
+  font-style: normal;
+}
+.bac-step-desc {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.975rem;
+  margin: 0;
+  padding-left: 1.6rem;
+}
+.bac-right {
+  background: #EEF2F4;
+  padding: 60px 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+}
+.bac-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 460px;
+}
+.bac-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.bac-card-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.bac-card-org {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.2rem;
+}
+.bac-card-title {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin: 0;
+}
+.bac-card-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.bac-card-meta li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.bac-meta-icon { flex-shrink: 0; }
+.bac-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+.bac-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.bac-form-heading {
+  font-size: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.25rem;
+}
+.bac-form .form-group textarea { min-height: 90px; }
+.bac-success { display: none; text-align: center; padding: 1.5rem 0; }
+.bac-success .check { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.bac-success h4 { color: var(--primary-dark); margin-bottom: 0.5rem; }
+.bac-success p { color: var(--text-light); font-size: 0.9rem; margin: 0; }
+
+@media (max-width: 900px) {
+  .bac-layout { grid-template-columns: 1fr; min-height: auto; }
+  .bac-left { padding: 60px 32px; }
+  .bac-right { padding: 48px 24px; }
+  .bac-card { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .bac-left { padding: 48px 20px; }
+  .bac-right { padding: 32px 16px; }
+  .bac-card { padding: 1.75rem 1.25rem; }
+}
+
 /* ---- CONTACT SECTION ---- */
+/* ---- Call Steps (timeline on left of booking form) ---- */
+.call-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  position: relative;
+}
+.call-steps-list::before {
+  content: '';
+  position: absolute;
+  top: 1.375rem;
+  bottom: 1.375rem;
+  left: 1.375rem;
+  width: 2px;
+  background: var(--border);
+}
+.call-step-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1.75rem;
+  position: relative;
+}
+.call-step-item:last-child { padding-bottom: 0; }
+.call-step-num {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.call-step-body { padding-top: 0.4rem; }
+.call-step-body strong {
+  display: block;
+  color: var(--primary-dark);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.call-step-body p { font-size: 0.875rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
 .contact-section { background: var(--white); }
 .contact-grid {
   display: grid;
