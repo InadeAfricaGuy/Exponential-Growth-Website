@@ -111,7 +111,8 @@
   /* ---- View All / View Less services toggle ---- */
   const viewAllBtn = document.getElementById('viewAllServicesBtn');
   if (viewAllBtn) {
-    viewAllBtn.addEventListener('click', () => {
+    viewAllBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const extraCards = document.querySelectorAll('.service-card--extra');
       const isExpanded = viewAllBtn.getAttribute('aria-expanded') === 'true';
       extraCards.forEach(card => {
