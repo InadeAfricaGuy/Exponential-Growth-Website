@@ -91,6 +91,18 @@ section { padding: 80px 0; }
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(217,178,76,0.35);
 }
+.btn-green {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+.btn-green:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(17,101,48,0.35);
+}
 .btn-outline {
   background: transparent;
   color: var(--white);
