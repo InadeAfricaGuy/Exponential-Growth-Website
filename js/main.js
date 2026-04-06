@@ -32,12 +32,59 @@
     });
   }
 
+  /* ---- Nav dropdown ---- */
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close on Escape from toggle or any menu item
+    dropdown.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdown.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+
+    // Toggle with Enter/Space on the button (native button already handles this,
+    // but ensure aria state stays in sync for any custom scenarios)
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+  });
+
+  // Single document-level click listener to close all open dropdowns
+  document.addEventListener('click', () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   /* ---- Active nav link ---- */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+  document.querySelectorAll('.nav-links a, .nav-dropdown-menu a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
+      // Also mark the parent dropdown toggle as active
+      const parentDropdown = link.closest('.nav-dropdown');
+      if (parentDropdown) {
+        const toggle = parentDropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.classList.add('active');
+      }
     }
   });
 
