@@ -177,7 +177,7 @@ section { padding: 80px 0; }
   color: var(--accent);
   background: rgba(217,178,76,0.08);
 }
-.nav-cta { margin-left: 0.5rem; }
+.nav-cta { margin-left: 0.5rem; padding: 0.4rem 1rem; font-size: 0.8rem; }
 .nav-hamburger {
   display: none;
   flex-direction: column;
